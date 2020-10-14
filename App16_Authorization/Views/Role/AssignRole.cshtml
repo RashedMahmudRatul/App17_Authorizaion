@@ -1,0 +1,26 @@
+﻿
+<h3 class="text-primary">@ViewBag.msg</h3>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="AssignRole" method="post">
+            <label>User Email</label>
+            <select name="appuser" class="form-control">
+                @foreach (var item in ViewBag.users)
+                {
+                    <option value="@item.Email">@item.Email</option>
+                }
+            </select>
+            <br />
+            <label>Role Name</label>
+            <select name="approle" class="form-control">
+                @foreach (var item in ViewBag.roles)
+                {
+                    <option value="@item.NormalizedName">@item.NormalizedName</option>
+                }
+            </select>
+             <br /><br />
+            <input type="submit" class="btn btn-primary" value="Assign Role" />
+        </form>
+    </div>
+</div>
